@@ -1,22 +1,16 @@
 import SwiftUI
 
-// CAMADA VIEW
-// Desenhar elementos na tela
-// Tudo em respeito a visualização da tela
 struct SplashView: View {
     
-    // Instancia da viewModel, porem no observable
     @ObservedObject var viewModel: SplashViewModel
     
     var body: some View {
-        // Group apenas uma cascata que serve para agrupar e tem a função onAppear, que dispara toda vez que a tela aparecer
         Group {
             switch viewModel.uiState {
             case .loading:
                 loadingView(error: nil)
-            case .goToSigningScreen:
-                Text("Signing")
-                // TODO: Navegar proxima tela
+            case .goToSignInScreen:
+                viewModel.signInView()
             case .goToHomeScreen:
                 Text("Home")
                 // TODO: Navegar proxima tela

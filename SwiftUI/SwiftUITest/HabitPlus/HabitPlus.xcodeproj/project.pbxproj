@@ -16,6 +16,10 @@
 		AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19A82C29CF2300C524BB /* SplashView.swift */; };
 		AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */; };
 		AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */; };
+		AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B32C29EF0700C524BB /* SignInView.swift */; };
+		AFEE19B62C29EF3B00C524BB /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B52C29EF3B00C524BB /* SignInModel.swift */; };
+		AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */; };
+		AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B92C29F04600C524BB /* SplashViewRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		AFEE19A82C29CF2300C524BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		AFEE19B32C29EF0700C524BB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		AFEE19B52C29EF3B00C524BB /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		AFEE19B92C29F04600C524BB /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 		AF1530A22C29C395009041A8 /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				AFEE19AF2C29EEDC00C524BB /* SignIn */,
 				AFEE19A52C29CEE800C524BB /* Splash */,
 				AF1530A32C29C395009041A8 /* HabitPlusApp.swift */,
 				AF1530A72C29C399009041A8 /* Assets.xcassets */,
@@ -161,6 +170,41 @@
 			isa = PBXGroup;
 			children = (
 				AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */,
+				AFEE19B92C29F04600C524BB /* SplashViewRouter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AFEE19AF2C29EEDC00C524BB /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE19B22C29EEEE00C524BB /* ViewModel */,
+				AFEE19B12C29EEE700C524BB /* Model */,
+				AFEE19B02C29EEE200C524BB /* View */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		AFEE19B02C29EEE200C524BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE19B32C29EF0700C524BB /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFEE19B12C29EEE700C524BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE19B52C29EF3B00C524BB /* SignInModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFEE19B22C29EEEE00C524BB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,10 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */,
+				AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */,
+				AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */,
 				AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
 				AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */,
+				AFEE19B62C29EF3B00C524BB /* SignInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
