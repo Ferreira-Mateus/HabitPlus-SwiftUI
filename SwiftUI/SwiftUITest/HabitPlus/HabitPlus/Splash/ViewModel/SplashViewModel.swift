@@ -2,6 +2,11 @@ import Foundation
 import SwiftUI
 
 // É um objeto observavel pelo body
+// Camada de regra de negocio
+// Exibição dos dados, camada de ação
+// Classe observada pela view, que enxerga um view model
+// A view observa todos os estados de referencia na viewModel
+// Sempre que muda algum estado, a viewModel notifica a View
 class SplashViewModel: ObservableObject {
     
     // Published é uma variavel state publicada

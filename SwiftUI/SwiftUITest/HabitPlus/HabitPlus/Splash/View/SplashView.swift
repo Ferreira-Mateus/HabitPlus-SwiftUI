@@ -1,5 +1,8 @@
 import SwiftUI
 
+// CAMADA VIEW
+// Desenhar elementos na tela
+// Tudo em respeito a visualização da tela
 struct SplashView: View {
     
     // Instancia da viewModel, porem no observable
