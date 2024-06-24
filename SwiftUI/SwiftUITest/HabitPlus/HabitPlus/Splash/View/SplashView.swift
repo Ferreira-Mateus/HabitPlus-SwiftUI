@@ -2,22 +2,27 @@ import SwiftUI
 
 struct SplashView: View {
     
-    // Começando no loading pois é a splash
-    @State var state: SplashUIState = .loading
+    // Instancia da viewModel, porem no observable
+    @ObservedObject var viewModel: SplashViewModel
     
     var body: some View {
-        switch state {
-        case .loading:
-            loadingView(error: nil)
-        case .goToSigningScreen:
-            Text("Signing")
-            // TODO: Navegar proxima tela
-        case .goToHomeScreen:
-            Text("Home")
-            // TODO: Navegar proxima tela
-        case .error(let error):
-            loadingView(error: error)
-        }
+        // Group apenas uma cascata que serve para agrupar e tem a função onAppear, que dispara toda vez que a tela aparecer
+        Group {
+            switch viewModel.uiState {
+            case .loading:
+                loadingView(error: nil)
+            case .goToSigningScreen:
+                Text("Signing")
+                // TODO: Navegar proxima tela
+            case .goToHomeScreen:
+                Text("Home")
+                // TODO: Navegar proxima tela
+            case .error(let error):
+                loadingView(error: error)
+            }
+        }.onAppear(perform: {
+            viewModel.onAppear()
+        })
     }
 }
 
@@ -44,6 +49,9 @@ extension SplashView {
     }
 }
 
+let viewModel = SplashViewModel()
+let splash = SplashView(viewModel: viewModel)
+
 #Preview {
-    SplashView(state: .error("erro"))
+    splash
 }
