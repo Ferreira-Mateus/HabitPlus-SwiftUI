@@ -8,56 +8,21 @@ struct SplashView: View {
     var body: some View {
         switch state {
         case .loading:
-//            LoadingView()
-            //loading
-            loadingView()
+            loadingView(error: nil)
         case .goToSigningScreen:
             Text("Signing")
             // TODO: Navegar proxima tela
         case .goToHomeScreen:
             Text("Home")
             // TODO: Navegar proxima tela
-        case .error(let msg):
-            Text("Erro \(msg)")
+        case .error(let error):
+            loadingView(error: error)
         }
     }
 }
 
-// FORMAS DE UTILIZAR UMA VIEW
-// 1. Compartilhamento | Objetos
-// Reutilizar Objetos e Views
-//struct LoadingView: View {
-//    var body: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .padding(20)
-//                .background(Color.white)
-//                .ignoresSafeArea()
-//        }
-//    }
-//}
-
-// 2. Variáveis em extensions
-//extension SplashView {
-//    var loading: some View {
-//        ZStack {
-//            Image("logo")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .padding(20)
-//                .background(Color.white)
-//                .ignoresSafeArea()
-//        }
-//    }
-//}
-
-// 3. Funções em extensions
 extension SplashView {
-    func loadingView() -> some View {
+    func loadingView(error: String?) -> some View {
         ZStack {
             Image("logo")
                 .resizable()
@@ -66,11 +31,19 @@ extension SplashView {
                 .padding(20)
                 .background(Color.white)
                 .ignoresSafeArea()
+            
+            if let error = error {
+                Text("")
+                    .alert(isPresented: .constant(true)) {
+                        Alert(title: Text("Habit"), message: Text(error), dismissButton: .default(Text("Ok")) {
+                            // TODO: Ação quando fecha o botão
+                    })
+                }
+            }
         }
     }
 }
 
 #Preview {
-    //    SplashView(state: .error("AA"))
-    SplashView()
+    SplashView(state: .error("erro"))
 }
