@@ -17,6 +17,7 @@
 		AF23EA562C2C765B00727F07 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA552C2C765B00727F07 /* HomeViewModel.swift */; };
 		AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA572C2C766D00727F07 /* HomeView.swift */; };
 		AF23EA5A2C2C769400727F07 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA592C2C769400727F07 /* SignUpView.swift */; };
+		AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA5D2C2C7A0F00727F07 /* Gender.swift */; };
 		AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19A82C29CF2300C524BB /* SplashView.swift */; };
 		AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */; };
 		AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */; };
@@ -57,6 +58,7 @@
 		AF23EA552C2C765B00727F07 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AF23EA572C2C766D00727F07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AF23EA592C2C769400727F07 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AF23EA5D2C2C7A0F00727F07 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		AFEE19A82C29CF2300C524BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		AF1530A22C29C395009041A8 /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				AF23EA5B2C2C79FE00727F07 /* Common */,
 				AF23EA512C2C763200727F07 /* SignUp */,
 				AF23EA4D2C2C761B00727F07 /* Home */,
 				AFEE19AF2C29EEDC00C524BB /* SignIn */,
@@ -213,6 +216,22 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF23EA5B2C2C79FE00727F07 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA5C2C2C7A0400727F07 /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AF23EA5C2C2C7A0400727F07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA5D2C2C7A0F00727F07 /* Gender.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AFEE19A52C29CEE800C524BB /* Splash */ = {
@@ -423,6 +442,7 @@
 				AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */,
 				AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
+				AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
 				AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */,
 				AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */,
