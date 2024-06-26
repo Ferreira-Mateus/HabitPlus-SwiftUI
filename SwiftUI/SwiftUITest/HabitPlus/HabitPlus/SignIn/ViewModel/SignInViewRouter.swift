@@ -9,7 +9,7 @@ enum SignInViewRouter {
     }
     
     static func makeSignUpView() -> some View {
-//        let viewModel = SignUpViewModel()
-        return SignUpView()
+        let viewModel = SignUpViewModel()
+        return SignUpView(viewModel: viewModel)
     }
 }
