@@ -13,11 +13,15 @@
 		AF1530B52C29C399009041A8 /* HabitPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1530B42C29C399009041A8 /* HabitPlusTests.swift */; };
 		AF1530BF2C29C399009041A8 /* HabitPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1530BE2C29C399009041A8 /* HabitPlusUITests.swift */; };
 		AF1530C12C29C399009041A8 /* HabitPlusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1530C02C29C399009041A8 /* HabitPlusUITestsLaunchTests.swift */; };
+		AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA4B2C2C75BB00727F07 /* SignInViewRouter.swift */; };
+		AF23EA562C2C765B00727F07 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA552C2C765B00727F07 /* HomeViewModel.swift */; };
+		AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA572C2C766D00727F07 /* HomeView.swift */; };
+		AF23EA5A2C2C769400727F07 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA592C2C769400727F07 /* SignUpView.swift */; };
 		AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19A82C29CF2300C524BB /* SplashView.swift */; };
 		AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */; };
 		AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */; };
 		AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B32C29EF0700C524BB /* SignInView.swift */; };
-		AFEE19B62C29EF3B00C524BB /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B52C29EF3B00C524BB /* SignInModel.swift */; };
+		AFEE19B62C29EF3B00C524BB /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B52C29EF3B00C524BB /* SignInUIState.swift */; };
 		AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */; };
 		AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE19B92C29F04600C524BB /* SplashViewRouter.swift */; };
 /* End PBXBuildFile section */
@@ -49,11 +53,15 @@
 		AF1530BA2C29C399009041A8 /* HabitPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1530BE2C29C399009041A8 /* HabitPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPlusUITests.swift; sourceTree = "<group>"; };
 		AF1530C02C29C399009041A8 /* HabitPlusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPlusUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AF23EA4B2C2C75BB00727F07 /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
+		AF23EA552C2C765B00727F07 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AF23EA572C2C766D00727F07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AF23EA592C2C769400727F07 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AFEE19A82C29CF2300C524BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		AFEE19AD2C29DA9900C524BB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AFEE19B32C29EF0700C524BB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		AFEE19B52C29EF3B00C524BB /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		AFEE19B52C29EF3B00C524BB /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		AFEE19B92C29F04600C524BB /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +114,8 @@
 		AF1530A22C29C395009041A8 /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				AF23EA512C2C763200727F07 /* SignUp */,
+				AF23EA4D2C2C761B00727F07 /* Home */,
 				AFEE19AF2C29EEDC00C524BB /* SignIn */,
 				AFEE19A52C29CEE800C524BB /* Splash */,
 				AF1530A32C29C395009041A8 /* HabitPlusApp.swift */,
@@ -138,6 +148,71 @@
 				AF1530C02C29C399009041A8 /* HabitPlusUITestsLaunchTests.swift */,
 			);
 			path = HabitPlusUITests;
+			sourceTree = "<group>";
+		};
+		AF23EA4D2C2C761B00727F07 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA502C2C762A00727F07 /* ViewModel */,
+				AF23EA4F2C2C762600727F07 /* Model */,
+				AF23EA4E2C2C762000727F07 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AF23EA4E2C2C762000727F07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA572C2C766D00727F07 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF23EA4F2C2C762600727F07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF23EA502C2C762A00727F07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA552C2C765B00727F07 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF23EA512C2C763200727F07 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA542C2C764100727F07 /* ViewModel */,
+				AF23EA532C2C763D00727F07 /* Model */,
+				AF23EA522C2C763800727F07 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		AF23EA522C2C763800727F07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF23EA592C2C769400727F07 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF23EA532C2C763D00727F07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF23EA542C2C764100727F07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AFEE19A52C29CEE800C524BB /* Splash */ = {
@@ -196,7 +271,7 @@
 		AFEE19B12C29EEE700C524BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFEE19B52C29EF3B00C524BB /* SignInModel.swift */,
+				AFEE19B52C29EF3B00C524BB /* SignInUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				AFEE19B72C29EF4A00C524BB /* SignInViewModel.swift */,
+				AF23EA4B2C2C75BB00727F07 /* SignInViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,11 +418,15 @@
 				AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */,
 				AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */,
 				AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */,
+				AF23EA562C2C765B00727F07 /* HomeViewModel.swift in Sources */,
+				AF23EA5A2C2C769400727F07 /* SignUpView.swift in Sources */,
 				AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */,
+				AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
+				AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */,
 				AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */,
-				AFEE19B62C29EF3B00C524BB /* SignInModel.swift in Sources */,
+				AFEE19B62C29EF3B00C524BB /* SignInUIState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

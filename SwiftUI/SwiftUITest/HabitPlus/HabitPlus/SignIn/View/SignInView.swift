@@ -11,50 +11,63 @@ struct SignInView: View {
     @State var action: Int? = 0
     
     var body: some View {
-        // Toda naveção precisa de uma classe pai, que é a navigationView, assim clicando em cadastre-se ele navega para a tela com a tag desejada
-        NavigationView {
-            
-            ScrollView(showsIndicators: false) {
-                
-                VStack(alignment: .center, spacing: 20) {
+        ZStack {
+            if case SignInUIState.goToHomeScreen = viewModel.uiState {
+                viewModel.goToHomeView()
+            } else {
+                NavigationView {
                     
-                    //Empurrar no minimo 36 de cima pra baixo
-                    Spacer(minLength: 36)
-                    
-                    VStack(alignment: .center, spacing: 8) {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal, 96)
+                    ScrollView(showsIndicators: false) {
                         
-                        Text("Login")
-                            .foregroundColor(.blue)
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 8)
-                        
-                        numberField
-                        passwordField
-                        enterButton
-                        registerLink
-                        
-                        Text("Copyright @YYY")
-                            .foregroundColor(.gray)
-                            .font(Font.system(size: 16).bold())
-                            .padding(.top, 16)
+                        VStack(alignment: .center, spacing: 20) {
+                            
+                            Spacer(minLength: 36)
+                            
+                            VStack(alignment: .center, spacing: 8) {
+                                Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.horizontal, 96)
+                                
+                                Text("Login")
+                                    .foregroundColor(.blue)
+                                    .font(Font.system(.title).bold())
+                                    .padding(.bottom, 8)
+                                
+                                emailField
+                                passwordField
+                                enterButton
+                                registerLink
+                                
+                                Text("Copyright @YYY")
+                                    .foregroundColor(.gray)
+                                    .font(Font.system(size: 16).bold())
+                                    .padding(.top, 16)
+                            }
+                        }
+                        if case SignInUIState.error(let value) = viewModel.uiState {
+                            Text("")
+                                .alert(isPresented: .constant(true)) {
+                                    Alert(title: Text("Habit"), message: Text(value), dismissButton: .default(Text("Ok")) {
+                                        // TODO: Ação quando fecha o botão
+                                })
+                            }
+                        }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.horizontal, 32)
+                    .background(Color.white)
+                    .navigationBarTitle("Login", displayMode: .inline)
+                    .navigationBarHidden(navigationHidden)
                 }
+
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 32)
-            .background(Color.white)
-            .navigationBarTitle("Login", displayMode: .inline)
-            .navigationBarHidden(navigationHidden)
         }
     }
 }
 
 extension SignInView {
-    var numberField: some View {
+    var emailField: some View {
         TextField("", text: $email)
             .border(Color.black)
             .padding(.horizontal, 48)
@@ -72,7 +85,7 @@ extension SignInView {
 extension SignInView {
     var enterButton: some View {
         Button("Entrar") {
-            // TODO: Evento de click
+            viewModel.login(email: email, password: password)
         }
             .padding(.top, 24)
     }
@@ -86,9 +99,8 @@ extension SignInView {
                 .padding(.top, 48)
             
             ZStack {
-                // Camada invisível, aqui coloco a tela de destination, aqui está um texto mas pode ser a tela interna, a tag onde vamos encontrar a tela por ela, a seleção que é o action e a label
                 NavigationLink(
-                    destination: Text("Tela de cadastro"),
+                    destination: viewModel.goToSignUpView(),
                     tag: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/,
                     selection: $action,
                     label: { EmptyView() })
@@ -107,4 +119,3 @@ let splashSignIn = SignInView(viewModel: viewModelSignIn)
 #Preview {
     splashSignIn
 }
-
