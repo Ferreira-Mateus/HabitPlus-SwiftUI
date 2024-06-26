@@ -11,9 +11,11 @@ struct SignInView: View {
     @State var action: Int? = 0
     
     var body: some View {
+        
         ZStack {
             if case SignInUIState.goToHomeScreen = viewModel.uiState {
                 viewModel.goToHomeView()
+                
             } else {
                 NavigationView {
                     

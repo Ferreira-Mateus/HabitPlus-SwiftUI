@@ -1,8 +1,6 @@
 import SwiftUI
 
-struct SignUpView: View {
-//    @ObservedObject var viewModel: SignUpViewModel
-    
+struct SignUpView: View {    
     @State var fullName = ""
     @State var email = ""
     @State var password = ""
