@@ -31,7 +31,6 @@ extension SplashView {
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(20)
-                .background(Color.white)
                 .ignoresSafeArea()
             
             if let error = error {
@@ -50,5 +49,5 @@ let viewModel = SplashViewModel()
 let splash = SplashView(viewModel: viewModel)
 
 #Preview {
-    splash
+    splash.preferredColorScheme(.light)
 }
