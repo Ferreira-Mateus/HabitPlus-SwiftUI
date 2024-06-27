@@ -58,7 +58,6 @@ struct SignInView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, 32)
-                    .background(Color.white)
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(navigationHidden)
                 }
@@ -70,9 +69,11 @@ struct SignInView: View {
 
 extension SignInView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color.black)
-            .padding(.horizontal, 48)
+        EditTextView(text: $email,
+                     placeholder: "E-mail",
+                     keyboard: .emailAddress,
+                     error: "E-mail inválido",
+                     failure: email.count < 5)
     }
 }
 
@@ -120,4 +121,5 @@ let splashSignIn = SignInView(viewModel: viewModelSignIn)
 
 #Preview {
     splashSignIn
+        .preferredColorScheme(.dark)
 }
