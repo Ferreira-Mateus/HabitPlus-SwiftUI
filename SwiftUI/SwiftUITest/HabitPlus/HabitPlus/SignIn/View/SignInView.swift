@@ -41,9 +41,9 @@ struct SignInView: View {
                                 enterButton
                                 registerLink
                                 
-                                Text("Copyright @YYY")
+                                Text("Copyright - MFA LTDA 2022")
                                     .foregroundColor(.gray)
-                                    .font(Font.system(size: 16).bold())
+                                    .font(Font.system(size: 13).bold())
                                     .padding(.top, 16)
                             }
                         }
@@ -73,24 +73,28 @@ extension SignInView {
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: email.count < 5)
+                     failure: !email.isEmail())
     }
 }
 
 extension SignInView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color.black)
-            .padding(.horizontal, 48)
+        EditTextView(text: $password,
+                     placeholder: "Senha",
+                     keyboard: .emailAddress,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.count < 8,
+                     isSecure: true)
     }
 }
 
 extension SignInView {
     var enterButton: some View {
-        Button("Entrar") {
+        LoadingButtonView(action: {
             viewModel.login(email: email, password: password)
-        }
-            .padding(.top, 24)
+        }, 
+                          text: "Entrar",
+                          showProgress: self.viewModel.uiState == SignInUIState.loading, disabled: !email.isEmail() || password.count < 8)
     }
 }
 
@@ -121,5 +125,5 @@ let splashSignIn = SignInView(viewModel: viewModelSignIn)
 
 #Preview {
     splashSignIn
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(.light)
 }
