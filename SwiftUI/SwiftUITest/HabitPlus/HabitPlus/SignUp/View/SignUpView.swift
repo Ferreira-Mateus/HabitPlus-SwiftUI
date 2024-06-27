@@ -22,7 +22,7 @@ struct SignUpView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         
                         Text("Cadastro")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("textColor"))
                             .font(Font.system(.title).bold())
                             .padding(.bottom, 8)
                         
@@ -54,43 +54,62 @@ struct SignUpView: View {
 
 extension SignUpView {
     var fullNameField: some View {
-        TextField("", text: $fullName)
-            .border(Color.black)
+        EditTextView(text: $fullName,
+                     placeholder: "Nome completo*",
+                     keyboard: .default,
+                     error: "Nome deve ter ao menos 3 caracteres",
+                     failure: fullName.count < 3)
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        TextField("", text: $email)
-            .border(Color.black)
+        EditTextView(text: $email,
+                     placeholder: "E-mail*",
+                     keyboard: .emailAddress,
+                     error: "E-mail inválido",
+                     failure: !email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color.black)
+        EditTextView(text: $password,
+                     placeholder: "Senha*",
+                     keyboard: .emailAddress,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.count < 8,
+                     isSecure: true)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        TextField("", text: $document)
-            .border(Color.black)
+        EditTextView(text: $document,
+                     placeholder: "CPF*",
+                     keyboard: .numberPad,
+                     error: "CPF inválido",
+                     failure: document.count != 11)
     }
 }
 
 extension SignUpView {
     var phoneField: some View {
-        TextField("", text: $phone)
-            .border(Color.black)
+        EditTextView(text: $phone,
+                     placeholder: "Tel",
+                     keyboard: .numberPad,
+                     error: "Número de telefone inválido*",
+                     failure: phone.count != 9)
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        TextField("", text: $birthday)
-            .border(Color.black)
+        EditTextView(text: $birthday,
+                     placeholder: "Data de nascimento*",
+                     keyboard: .numberPad,
+                     error: "Data de nascimento inválida",
+                     failure: birthday.count < 8)
     }
 }
 
@@ -112,10 +131,17 @@ extension SignUpView {
 
 extension SignUpView {
     var saveButton: some View {
-        Button("Realize o seu cadastro") {
+        LoadingButtonView(action: {
             viewModel.signUp()
-        }
-            .padding(.top, 24)
+        },
+                          text: "Cadastrar",
+                          showProgress: self.viewModel.uiState == SignUpUIState.loading,
+                          disabled: !email.isEmail() || 
+                          password.count < 8 ||
+                          fullName.count < 3 ||
+                          document.count != 11 ||
+                          phone.count != 9 ||
+                          birthday.count < 8)
     }
 }
 
@@ -124,4 +150,5 @@ let splashSignUp = SignUpView(viewModel: viewModelSignUp)
 
 #Preview {
     splashSignUp
+        .preferredColorScheme(.light)
 }
