@@ -33,7 +33,7 @@ class SignUpViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
         let birthday = formatter.string(from: dateFormatted)
         
-        let signInRequest = SignUpRequest(fullName: fullName,
+        let req = SignUpRequest(fullName: fullName,
                           email: email,
                           password: password,
                           document: document,
@@ -41,9 +41,8 @@ class SignUpViewModel: ObservableObject {
                           birthday: birthday,
                           gender: gender.index)
 
-        WebService.postUser(request: signInRequest) { (successResponse, errorResponse) in
+        WebService.postUser(request: req) { (successResponse, errorResponse) in
             if let error = errorResponse {
-                // Main thread
                 DispatchQueue.main.async {
                     self.uiState = .error(error.detail)
                 }

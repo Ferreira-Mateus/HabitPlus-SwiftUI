@@ -14,7 +14,6 @@ class SignInViewModel: ObservableObject {
     
     init() {
         cancellable = publisher.sink(receiveValue: { value in
-            print("Usuário criado! goToHome: \(value)")
             
             if value {
                 self.uiState = .goToHomeScreen
@@ -29,8 +28,20 @@ class SignInViewModel: ObservableObject {
     func login() {
         self.uiState = .loading
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.uiState = .goToHomeScreen
+        let req = SignInRequest(email: email,
+                                password: password)
+        WebService.login(request: req) { (successResponse, errorResponse) in
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+                }
+            }
+            
+            if let success = successResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .goToHomeScreen
+                }
+            }
         }
     }
 }
