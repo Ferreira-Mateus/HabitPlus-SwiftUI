@@ -66,16 +66,16 @@ enum WebService {
         task.resume()
     }
     
-    static func postUser(request: SignUpRequest) {
+    static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?) -> Void) {
         call(path: .postUser, body: request) { result in
             switch result {
             case .failure(let error, let data):
                 if let data = data {
                     if error == .badRequest {
-                        // aqui ele cria o decoder e tenta transformar ele em um objeto responde que é do tipo signUpResponse
                         let decoder = JSONDecoder()
-                        let response = try? decoder.decode(SignUpResponse.self, from: data)
-                        print(response?.detail)
+                        // Criando responde de erro geral
+                        let response = try? decoder.decode(ErrorResponse.self, from: data)
+                        completion(nil, response)
                     }
                 }
                 break

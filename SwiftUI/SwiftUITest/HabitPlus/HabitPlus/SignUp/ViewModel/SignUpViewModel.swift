@@ -33,13 +33,20 @@ class SignUpViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
         let birthday = formatter.string(from: dateFormatted)
         
-        WebService.postUser(request: SignUpRequest(fullName: fullName,
-                                                   email: email,
-                                                   password: password,
-                                                   document: document,
-                                                   phone: phone,
-                                                   birthday: birthday,
-                                                   gender: gender.index))
+        let signInRequest = SignUpRequest(fullName: fullName,
+                          email: email,
+                          password: password,
+                          document: document,
+                          phone: phone,
+                          birthday: birthday,
+                          gender: gender.index)
+        
+        // Com o retorno do sucesso ou erro, consigo mudar o state passando no erro o detail como parametro do erro para o alert
+        WebService.postUser(request: signInRequest) { (successResponse, errorResponse) in
+            if let error = errorResponse {
+                self.uiState = .error(error.detail)
+            }
+        }
     }
 }
 
