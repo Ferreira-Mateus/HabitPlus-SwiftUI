@@ -35,52 +35,28 @@ enum WebService {
         return URLRequest(url: url)
     }
     
-    static func postUser(fullName: String,
-                         email: String,
-                         password: String,
-                         document: String,
-                         phone: String,
-                         birthday: String,
-                         gender: Int) {
-        
-        let json: [String : Any] = [
-            "name": fullName,
-            "email": email,
-            "document": password,
-            "phone": phone,
-            "gender": gender,
-            "birthday": birthday,
-            "password": password
-        ]
-        
-        // try? pois vai tentar fazer essa conversão
-        // caso queira tratar o erro, usar o do try catch
-        // agora ele transforma nosso dicionário em um objeto json
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    static func postUser(request: SignUpRequest) {
+                
+        guard let jsonData = try? JSONEncoder().encode(request) else { return }
         
         guard var urlRequest = completeUrl(path: .postUser) else { return }
         
-        // DEFINIÇÕES DA URL DE CHAMADA
         urlRequest.httpMethod = "POST"
         
-        //Accept é o metodo que o cliente aceita, no caso aplication json
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
-                // Printando erro da url
                 print(error)
                 return
             }
             
-            // Printando os dados que vão vir do response
             print(String(data: data, encoding: .utf8))
             print("response\n")
             print(response)
             
-            // Transformando o response em httpStatusCode
             if let r = response as? HTTPURLResponse {
                 print(r.statusCode)
             }
