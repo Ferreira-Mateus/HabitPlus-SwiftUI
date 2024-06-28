@@ -26,13 +26,6 @@ enum WebService {
         
     }
     
-    enum HttpCases: String {
-        case post = "POST"
-        case get = "GET"
-        case put = "PUT"
-        case delete = "DELETE"
-    }
-    
     private static func completeUrl(path: Endpoint) -> URLRequest? {
         guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil }
         
@@ -74,7 +67,6 @@ enum WebService {
         task.resume()
     }
     
-    // Chamada com json
     private static func call<T: Encodable>(path: Endpoint,
                                            body: T,
                                            completion: @escaping (Result) -> Void) {
@@ -86,8 +78,6 @@ enum WebService {
              completion: completion)
     }
     
-    // Chamada com formUrl
-    // Aqui ele pega a url completa, transforma nesse components que vai separar as infos em um array
     private static func call(path: Endpoint,
                              params: [URLQueryItem],
                              completion: @escaping (Result) -> Void) {
@@ -122,7 +112,7 @@ enum WebService {
         }
     }
     
-    static func login(request: SignInRequest, completion: @escaping (SignInResponse?, ErrorResponse?) -> Void) {
+    static func login(request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
         call(path: .login,
              params: [URLQueryItem(name: "username", value: request.email),
                       URLQueryItem(name: "password", value: request.password)
@@ -132,7 +122,7 @@ enum WebService {
                 if let data = data {
                     if error == .unauthorized {
                         let decoder = JSONDecoder()
-                        let response = try? decoder.decode(ErrorResponse.self, from: data)
+                        let response = try? decoder.decode(SignInErrorResponse.self, from: data)
                         completion(nil, response)
                     }
                 }

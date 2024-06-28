@@ -33,7 +33,7 @@ class SignInViewModel: ObservableObject {
         WebService.login(request: req) { (successResponse, errorResponse) in
             if let error = errorResponse {
                 DispatchQueue.main.async {
-                    self.uiState = .error(error.detail)
+                    self.uiState = .error(error.detail.message)
                 }
             }
             
