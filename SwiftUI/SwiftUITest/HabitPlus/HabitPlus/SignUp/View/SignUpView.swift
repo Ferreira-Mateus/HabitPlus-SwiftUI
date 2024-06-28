@@ -92,7 +92,7 @@ extension SignUpView {
                      placeholder: "Tel",
                      keyboard: .numberPad,
                      error: "Número de telefone inválido*",
-                     failure: viewModel.phone.count != 9)
+                     failure: viewModel.phone.count != 11)
     }
 }
 
@@ -100,7 +100,7 @@ extension SignUpView {
     var birthdayField: some View {
         EditTextView(text: $viewModel.birthday,
                      placeholder: "Data de nascimento*",
-                     keyboard: .numberPad,
+                     keyboard: .default,
                      error: "Data de nascimento inválida",
                      failure: viewModel.birthday.count < 8)
     }
@@ -133,7 +133,7 @@ extension SignUpView {
                           viewModel.password.count < 8 ||
                           viewModel.fullName.count < 3 ||
                           viewModel.document.count != 11 ||
-                          viewModel.phone.count != 9 ||
+                          viewModel.phone.count != 11 ||
                           viewModel.birthday.count < 8)
     }
 }

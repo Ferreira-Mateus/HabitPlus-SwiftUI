@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0F2AAC2C2F087B0089A10F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0F2AAB2C2F087B0089A10F /* WebService.swift */; };
 		AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1530A32C29C395009041A8 /* HabitPlusApp.swift */; };
 		AF1530A82C29C399009041A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1530A72C29C399009041A8 /* Assets.xcassets */; };
 		AF1530AB2C29C399009041A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1530AA2C29C399009041A8 /* Preview Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0F2AAB2C2F087B0089A10F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		AF1530A02C29C395009041A8 /* HabitPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1530A32C29C395009041A8 /* HabitPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPlusApp.swift; sourceTree = "<group>"; };
 		AF1530A72C29C399009041A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF0F2AAA2C2F085B0089A10F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF0F2AAB2C2F087B0089A10F /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AF1530972C29C395009041A8 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		AF23EA5B2C2C79FE00727F07 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AF0F2AAA2C2F085B0089A10F /* Network */,
 				AFA5DD582C2DB28100CBEB1F /* Lang */,
 				AF3FB3002C2DA7F600A3C77A /* View */,
 				AF23EA5C2C2C7A0400727F07 /* Model */,
@@ -488,6 +499,7 @@
 				AF23EA5A2C2C769400727F07 /* SignUpView.swift in Sources */,
 				AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */,
 				AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */,
+				AF0F2AAC2C2F087B0089A10F /* WebService.swift in Sources */,
 				AF23EA622C2C853B00727F07 /* SignUpViewModel.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
 				AF23EA642C2C85B000727F07 /* SignUpViewRouter.swift in Sources */,
