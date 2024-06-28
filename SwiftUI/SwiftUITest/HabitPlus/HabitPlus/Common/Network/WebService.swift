@@ -80,6 +80,7 @@ enum WebService {
                 }
                 break
             case .success(let data):
+                completion(true, nil)
                 break
             }
         }

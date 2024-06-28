@@ -40,11 +40,22 @@ class SignUpViewModel: ObservableObject {
                           phone: phone,
                           birthday: birthday,
                           gender: gender.index)
-        
-        // Com o retorno do sucesso ou erro, consigo mudar o state passando no erro o detail como parametro do erro para o alert
+
         WebService.postUser(request: signInRequest) { (successResponse, errorResponse) in
             if let error = errorResponse {
-                self.uiState = .error(error.detail)
+                // Main thread
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+                }
+            }
+            
+            if let success = successResponse {
+                DispatchQueue.main.async {
+                    self.publisher.send(success)
+                    if success {
+                        self.uiState = .success
+                    }
+                }
             }
         }
     }
