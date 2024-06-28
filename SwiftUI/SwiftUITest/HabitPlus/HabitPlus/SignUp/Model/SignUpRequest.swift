@@ -2,13 +2,13 @@ import Foundation
 
 struct SignUpRequest: Encodable {
     
-    var fullName: String
-    var email: String
-    var password: String
-    var document: String
-    var phone: String
-    var birthday: String
-    var gender: Int
+    let fullName: String
+    let email: String
+    let password: String
+    let document: String
+    let phone: String
+    let birthday: String
+    let gender: Int
     
     enum CodingKeys: String, CodingKey {
         case fullName = "name"

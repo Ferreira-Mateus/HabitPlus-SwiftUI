@@ -32,8 +32,6 @@ enum WebService {
         return URLRequest(url: url)
     }
     
-    // O tipo T é qualquer coisa que extenda do que passar no proximo
-    // Ou seja, agora essa função pode ser reutilizada para outras chamadas, no caso esse do post, de path tem o do post, e o de body ele tem o request que é do tipo SignUpRequest, que extende do Encodable e aí faz parte do tipo T que é genérico
     private static func call<T: Encodable>(path: Endpoint, 
                                            body: T,
                                            completion: @escaping (Result) -> Void) {
@@ -49,7 +47,6 @@ enum WebService {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
-                print(error)
                 completion(.failure(.internalServerError, nil))
                 return
             }
@@ -69,11 +66,18 @@ enum WebService {
         task.resume()
     }
     
-    // Temos que receber de volta o erro ou dado caso tenha sido sucesso a requisição
     static func postUser(request: SignUpRequest) {
         call(path: .postUser, body: request) { result in
             switch result {
             case .failure(let error, let data):
+                if let data = data {
+                    if error == .badRequest {
+                        // aqui ele cria o decoder e tenta transformar ele em um objeto responde que é do tipo signUpResponse
+                        let decoder = JSONDecoder()
+                        let response = try? decoder.decode(SignUpResponse.self, from: data)
+                        print(response?.detail)
+                    }
+                }
                 break
             case .success(let data):
                 break
