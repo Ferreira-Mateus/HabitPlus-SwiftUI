@@ -118,7 +118,7 @@ extension SignInView {
     }
 }
 
-let viewModelSignIn = SignInViewModel()
+let viewModelSignIn = SignInViewModel(interactor: SignInInteractor())
 let splashSignIn = SignInView(viewModel: viewModelSignIn)
 
 #Preview {

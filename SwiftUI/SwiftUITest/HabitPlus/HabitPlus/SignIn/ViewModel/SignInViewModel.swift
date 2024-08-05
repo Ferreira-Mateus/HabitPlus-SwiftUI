@@ -4,15 +4,17 @@ import Combine
 
 class SignInViewModel: ObservableObject {
     
-    @State var email = ""
-    @State var password = ""
+    @Published var email = ""
+    @Published var password = ""
 
     private var cancellable: AnyCancellable?
     private let publisher = PassthroughSubject<Bool, Never>()
+    private let interactor: SignInInteractor
     
     @Published var uiState: SignInUIState = .none
     
-    init() {
+    init(interactor: SignInInteractor) {
+        self.interactor = interactor
         cancellable = publisher.sink(receiveValue: { value in
             
             if value {
@@ -30,7 +32,7 @@ class SignInViewModel: ObservableObject {
         
         let req = SignInRequest(email: email,
                                 password: password)
-        WebService.login(request: req) { (successResponse, errorResponse) in
+        interactor.login(loginRequest: req) { (successResponse, errorResponse) in
             if let error = errorResponse {
                 DispatchQueue.main.async {
                     self.uiState = .error(error.detail.message)

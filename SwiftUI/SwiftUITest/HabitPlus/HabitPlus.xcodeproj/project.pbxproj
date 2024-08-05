@@ -29,6 +29,8 @@
 		AF23EA622C2C853B00727F07 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA612C2C853B00727F07 /* SignUpViewModel.swift */; };
 		AF23EA642C2C85B000727F07 /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23EA632C2C85B000727F07 /* SignUpViewRouter.swift */; };
 		AF3FB3022C2DA80D00A3C77A /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FB3012C2DA80D00A3C77A /* EditTextView.swift */; };
+		AF730F122C60FAD800D19323 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F112C60FAD800D19323 /* SignInInteractor.swift */; };
+		AF730F142C60FCAC00D19323 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F132C60FCAC00D19323 /* RemoteDataSource.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -84,6 +86,8 @@
 		AF23EA612C2C853B00727F07 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		AF23EA632C2C85B000727F07 /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		AF3FB3012C2DA80D00A3C77A /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		AF730F112C60FAD800D19323 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		AF730F132C60FCAC00D19323 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				AF0F2AAB2C2F087B0089A10F /* WebService.swift */,
+				AF730F132C60FCAC00D19323 /* RemoteDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -289,6 +294,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AF730F102C60FAC700D19323 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F112C60FAD800D19323 /* SignInInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		AFA5DD552C2DAEAF00CBEB1F /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +356,7 @@
 		AFEE19AF2C29EEDC00C524BB /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				AF730F102C60FAC700D19323 /* Interactor */,
 				AFEE19B22C29EEEE00C524BB /* ViewModel */,
 				AFEE19B12C29EEE700C524BB /* Model */,
 				AFEE19B02C29EEE200C524BB /* View */,
@@ -511,6 +525,7 @@
 				AF0F2AB02C2F2EA30089A10F /* SignUpResponse.swift in Sources */,
 				AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */,
 				AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */,
+				AF730F142C60FCAC00D19323 /* RemoteDataSource.swift in Sources */,
 				AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */,
 				AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */,
 				AF0F2AB82C2F405D0089A10F /* SignInErrorResponse.swift in Sources */,
@@ -520,6 +535,7 @@
 				AF23EA5A2C2C769400727F07 /* SignUpView.swift in Sources */,
 				AFEE19AB2C29CFC300C524BB /* SplashUIState.swift in Sources */,
 				AF23EA582C2C766D00727F07 /* HomeView.swift in Sources */,
+				AF730F122C60FAD800D19323 /* SignInInteractor.swift in Sources */,
 				AF0F2AAC2C2F087B0089A10F /* WebService.swift in Sources */,
 				AF23EA622C2C853B00727F07 /* SignUpViewModel.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
