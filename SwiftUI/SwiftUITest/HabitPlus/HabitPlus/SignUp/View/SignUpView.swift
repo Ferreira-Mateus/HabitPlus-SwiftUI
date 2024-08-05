@@ -138,7 +138,7 @@ extension SignUpView {
     }
 }
 
-let viewModelSignUp = SignUpViewModel()
+let viewModelSignUp = SignUpViewModel(interactor: SignUpInteractor())
 let splashSignUp = SignUpView(viewModel: viewModelSignUp)
 
 #Preview {

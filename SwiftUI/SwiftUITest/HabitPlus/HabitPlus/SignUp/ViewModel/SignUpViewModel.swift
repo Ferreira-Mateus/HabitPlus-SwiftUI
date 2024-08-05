@@ -14,7 +14,21 @@ class SignUpViewModel: ObservableObject {
     
     var publisher: PassthroughSubject<Bool, Never>!
     
+    private var cancellable: AnyCancellable?
+    private var cancellableSignIn: AnyCancellable?
+    
     @Published var uiState: SignUpUIState = .none
+    
+    private let interactor: SignUpInteractor
+    
+    init(interactor: SignUpInteractor) {
+        self.interactor = interactor
+    }
+    
+    deinit {
+        cancellable?.cancel()
+        cancellableSignIn?.cancel()
+    }
     
     func signUp() {
         self.uiState = .loading
@@ -41,31 +55,64 @@ class SignUpViewModel: ObservableObject {
                           birthday: birthday,
                           gender: gender.index)
 
-        WebService.postUser(request: req) { (successResponse, errorResponse) in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail)
+        cancellable = interactor.postUser(signUpRequest: req)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch(completion) {
+                case .failure(let appError):
+                    self.uiState = .error(appError.message)
+                    break
+                case .finished:
+                    break
+                }
+            } receiveValue: { created in
+                // Se criado, fazer o login primeiro
+                if created {
+                    let req = SignInRequest(email: self.email,
+                                            password: self.password)
+                    self.cancellableSignIn = self.interactor.login(signInRequest: req)
+                        .receive(on: DispatchQueue.main)
+                        .sink { completion in
+                            switch(completion) {
+                            case .failure(let appError):
+                                self.uiState = .error(appError.message)
+                                break
+                            case .finished:
+                                break
+                            }
+                        } receiveValue: { success in
+                            self.publisher.send(true)
+                            self.uiState = .success
+                        }
                 }
             }
-            
-            if let success = successResponse {
-//                WebService.login(request: SignInRequest(email: self.email,
-//                                                        password: self.password)) { (successResponse, errorResponse) in
-//                    if let errorSignIn = errorResponse {
-//                        DispatchQueue.main.async {
-//                            self.uiState = .error(errorSignIn.detail.message)
-//                        }
-//                    }
-//                    
-//                    if let successSignIn = successResponse {
-//                        DispatchQueue.main.async {
-//                            self.publisher.send(true)
-//                            self.uiState = .success
-//                        }
-//                    }
+
+        
+//        interactor.postUser(signUpRequest: req) { (successResponse, errorResponse) in
+//            if let error = errorResponse {
+//                DispatchQueue.main.async {
+//                    self.uiState = .error(error.detail)
 //                }
-            }
-        }
+//            }
+//            
+//            if let success = successResponse {
+////                WebService.login(request: SignInRequest(email: self.email,
+////                                                        password: self.password)) { (successResponse, errorResponse) in
+////                    if let errorSignIn = errorResponse {
+////                        DispatchQueue.main.async {
+////                            self.uiState = .error(errorSignIn.detail.message)
+////                        }
+////                    }
+////                    
+////                    if let successSignIn = successResponse {
+////                        DispatchQueue.main.async {
+////                            self.publisher.send(true)
+////                            self.uiState = .success
+////                        }
+////                    }
+////                }
+//            }
+//        }
     }
 }
 
