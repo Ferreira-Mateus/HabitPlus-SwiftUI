@@ -8,6 +8,7 @@ class SignInViewModel: ObservableObject {
     @Published var password = ""
 
     private var cancellable: AnyCancellable?
+    private var cancellableRequest: AnyCancellable?
     private let publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
     
@@ -25,6 +26,7 @@ class SignInViewModel: ObservableObject {
     
     deinit {
         cancellable?.cancel()
+        cancellableRequest?.cancel()
     }
     
     func login() {
@@ -32,19 +34,37 @@ class SignInViewModel: ObservableObject {
         
         let req = SignInRequest(email: email,
                                 password: password)
-        interactor.login(loginRequest: req) { (successResponse, errorResponse) in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail.message)
+        
+        // Vai ser disparado toda vez que o interactor trocar o future
+        cancellableRequest = interactor.login(loginRequest: req)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                // Aqui acontece o Error ou Finished
+                switch(completion) {
+                    case .failure(let appError):
+                    self.uiState = SignInUIState.error(appError.message) 
+                    break
+                    case .finished:
+                    break
                 }
+            } receiveValue: { success in
+                self.uiState = .goToHomeScreen
             }
-            
-            if let success = successResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .goToHomeScreen
-                }
-            }
-        }
+
+        
+//        interactor.login(loginRequest: req) { (successResponse, errorResponse) in
+//            if let error = errorResponse {
+//                DispatchQueue.main.async {
+//                    self.uiState = .error(error.detail.message)
+//                }
+//            }
+//            
+//            if let success = successResponse {
+//                DispatchQueue.main.async {
+//                    self.uiState = .goToHomeScreen
+//                }
+//            }
+//        }
     }
 }
 
