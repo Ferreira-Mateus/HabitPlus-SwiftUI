@@ -59,6 +59,12 @@ struct SignInView: View {
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(navigationHidden)
                 }
+                .onAppear {
+                    self.navigationHidden = true
+                }
+                .onDisappear {
+                    self.navigationHidden = false
+                }
 
             }
         }

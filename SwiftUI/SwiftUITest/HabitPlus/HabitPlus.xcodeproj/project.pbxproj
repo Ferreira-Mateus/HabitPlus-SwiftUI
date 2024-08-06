@@ -34,6 +34,8 @@
 		AF730F162C61018D00D19323 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F152C61018D00D19323 /* AppError.swift */; };
 		AF730F192C61081A00D19323 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F182C61081A00D19323 /* SignUpInteractor.swift */; };
 		AF730F1B2C6108C600D19323 /* SignUpRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1A2C6108C600D19323 /* SignUpRemoteDataSource.swift */; };
+		AF730F1D2C6287A600D19323 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1C2C6287A600D19323 /* UserAuth.swift */; };
+		AF730F1F2C6288BA00D19323 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -94,6 +96,8 @@
 		AF730F152C61018D00D19323 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		AF730F182C61081A00D19323 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		AF730F1A2C6108C600D19323 /* SignUpRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSource.swift; sourceTree = "<group>"; };
+		AF730F1C2C6287A600D19323 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AF0F2AAB2C2F087B0089A10F /* WebService.swift */,
+				AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				AF23EA5D2C2C7A0F00727F07 /* Gender.swift */,
 				AF0F2AB12C2F31120089A10F /* ErrorResponse.swift */,
 				AF730F152C61018D00D19323 /* AppError.swift */,
+				AF730F1C2C6287A600D19323 /* UserAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -547,7 +553,9 @@
 				AF730F142C60FCAC00D19323 /* SignInRemoteDataSource.swift in Sources */,
 				AFEE19B82C29EF4A00C524BB /* SignInViewModel.swift in Sources */,
 				AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */,
+				AF730F1F2C6288BA00D19323 /* LocalDataSource.swift in Sources */,
 				AF0F2AB82C2F405D0089A10F /* SignInErrorResponse.swift in Sources */,
+				AF730F1D2C6287A600D19323 /* UserAuth.swift in Sources */,
 				AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */,
 				AF0F2AB42C2F37EE0089A10F /* SignInRequest.swift in Sources */,
 				AF23EA562C2C765B00727F07 /* HomeViewModel.swift in Sources */,

@@ -6,9 +6,10 @@ class SignInViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
-
+    
     private var cancellable: AnyCancellable?
     private var cancellableRequest: AnyCancellable?
+    
     private let publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
     
@@ -28,7 +29,7 @@ class SignInViewModel: ObservableObject {
         cancellable?.cancel()
         cancellableRequest?.cancel()
     }
-    
+
     func login() {
         self.uiState = .loading
         
@@ -48,6 +49,11 @@ class SignInViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { success in
+                let userAuth = UserAuth(idToken: success.accessToken,
+                                        refreshToken: success.refreshToken,
+                                        expires: success.expires,
+                                        tokeyType: success.tokenType)
+                self.interactor.insertAuth(userAuth: userAuth)
                 self.uiState = .goToHomeScreen
             }
 
