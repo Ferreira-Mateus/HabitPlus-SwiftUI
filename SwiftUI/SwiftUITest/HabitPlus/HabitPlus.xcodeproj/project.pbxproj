@@ -36,6 +36,7 @@
 		AF730F1B2C6108C600D19323 /* SignUpRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1A2C6108C600D19323 /* SignUpRemoteDataSource.swift */; };
 		AF730F1D2C6287A600D19323 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1C2C6287A600D19323 /* UserAuth.swift */; };
 		AF730F1F2C6288BA00D19323 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */; };
+		AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F212C629D4900D19323 /* SplashInteractor.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -98,6 +99,7 @@
 		AF730F1A2C6108C600D19323 /* SignUpRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSource.swift; sourceTree = "<group>"; };
 		AF730F1C2C6287A600D19323 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		AF730F212C629D4900D19323 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -325,6 +327,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		AF730F202C629D3B00D19323 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F212C629D4900D19323 /* SplashInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		AFA5DD552C2DAEAF00CBEB1F /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +354,7 @@
 		AFEE19A52C29CEE800C524BB /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				AF730F202C629D3B00D19323 /* Interactor */,
 				AFEE19AC2C29DA6D00C524BB /* ViewModel */,
 				AFEE19A72C29CF0200C524BB /* Model */,
 				AFEE19A62C29CEFC00C524BB /* View */,
@@ -567,6 +578,7 @@
 				AF23EA622C2C853B00727F07 /* SignUpViewModel.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
 				AF23EA642C2C85B000727F07 /* SignUpViewRouter.swift in Sources */,
+				AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */,
 				AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */,
 				AF0F2AB22C2F31120089A10F /* ErrorResponse.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
