@@ -14,7 +14,7 @@ struct HabitView: View {
                 // Aqui utilizamos esse else antes e não else if direto, pois se não for loading eles tem uma condição específica, então todos caem aqui dentro
                 NavigationView {
                     ScrollView(showsIndicators: false) {
-                        VStack {
+                        VStack(spacing: 12) {
                             topContainer
                             addButon
                             
@@ -87,6 +87,8 @@ extension HabitView {
     var addButon: some View {
         NavigationLink(destination: Text("Tela de adicionar").frame(maxWidth: .infinity, maxHeight: .infinity)) {
             Label("Criar hábito", systemImage: "plus.app")
+            // Tentar usar sempre o modifier para coisas padrões do app (botões, editTexts e etc)
+                .modifier(ButtonStyle())
         }
         .padding(.horizontal, 16)
     }

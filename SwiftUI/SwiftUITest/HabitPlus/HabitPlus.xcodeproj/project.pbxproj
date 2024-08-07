@@ -43,6 +43,7 @@
 		AF730F2E2C637B5700D19323 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F2D2C637B5700D19323 /* HabitView.swift */; };
 		AF730F302C637B9200D19323 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F2F2C637B9200D19323 /* HabitViewModel.swift */; };
 		AF730F322C637CB600D19323 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F312C637CB600D19323 /* HabitUIState.swift */; };
+		AF730F352C63E16F00D19323 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F342C63E16F00D19323 /* ButtonStyle.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -112,6 +113,7 @@
 		AF730F2D2C637B5700D19323 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		AF730F2F2C637B9200D19323 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		AF730F312C637CB600D19323 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
+		AF730F342C63E16F00D19323 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		AF3FB3002C2DA7F600A3C77A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF730F332C63E16300D19323 /* Modifier */,
 				AFA5DD552C2DAEAF00CBEB1F /* Style */,
 				AF3FB3012C2DA80D00A3C77A /* EditTextView.swift */,
 				AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */,
@@ -382,6 +385,14 @@
 				AF730F2D2C637B5700D19323 /* HabitView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AF730F332C63E16300D19323 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F342C63E16F00D19323 /* ButtonStyle.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		AFA5DD552C2DAEAF00CBEB1F /* Style */ = {
@@ -633,6 +644,7 @@
 				AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */,
 				AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */,
 				AF0F2AB22C2F31120089A10F /* ErrorResponse.swift in Sources */,
+				AF730F352C63E16F00D19323 /* ButtonStyle.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
 				AF730F302C637B9200D19323 /* HabitViewModel.swift in Sources */,
 				AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */,
