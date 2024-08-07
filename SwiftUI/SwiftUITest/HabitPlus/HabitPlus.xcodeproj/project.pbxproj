@@ -39,6 +39,10 @@
 		AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F212C629D4900D19323 /* SplashInteractor.swift */; };
 		AF730F242C633BD200D19323 /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F232C633BD200D19323 /* RefreshRequest.swift */; };
 		AF730F262C633DEB00D19323 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */; };
+		AF730F282C637B0800D19323 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F272C637B0700D19323 /* HomeViewRouter.swift */; };
+		AF730F2E2C637B5700D19323 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F2D2C637B5700D19323 /* HabitView.swift */; };
+		AF730F302C637B9200D19323 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F2F2C637B9200D19323 /* HabitViewModel.swift */; };
+		AF730F322C637CB600D19323 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F312C637CB600D19323 /* HabitUIState.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -104,6 +108,10 @@
 		AF730F212C629D4900D19323 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		AF730F232C633BD200D19323 /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
 		AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
+		AF730F272C637B0700D19323 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
+		AF730F2D2C637B5700D19323 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		AF730F2F2C637B9200D19323 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		AF730F312C637CB600D19323 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 		AF1530A22C29C395009041A8 /* HabitPlus */ = {
 			isa = PBXGroup;
 			children = (
+				AF730F292C637B3000D19323 /* Habit */,
 				AF23EA5B2C2C79FE00727F07 /* Common */,
 				AF23EA512C2C763200727F07 /* SignUp */,
 				AF23EA4D2C2C761B00727F07 /* Home */,
@@ -239,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				AF23EA552C2C765B00727F07 /* HomeViewModel.swift */,
+				AF730F272C637B0700D19323 /* HomeViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +348,40 @@
 				AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AF730F292C637B3000D19323 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F2C2C637B4500D19323 /* View */,
+				AF730F2B2C637B3F00D19323 /* ViewModel */,
+				AF730F2A2C637B3800D19323 /* Model */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		AF730F2A2C637B3800D19323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F312C637CB600D19323 /* HabitUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF730F2B2C637B3F00D19323 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F2F2C637B9200D19323 /* HabitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF730F2C2C637B4500D19323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF730F2D2C637B5700D19323 /* HabitView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AFA5DD552C2DAEAF00CBEB1F /* Style */ = {
@@ -563,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF0F2AB02C2F2EA30089A10F /* SignUpResponse.swift in Sources */,
+				AF730F322C637CB600D19323 /* HabitUIState.swift in Sources */,
 				AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */,
 				AF730F162C61018D00D19323 /* AppError.swift in Sources */,
 				AF730F262C633DEB00D19323 /* SplashRemoteDataSource.swift in Sources */,
@@ -589,16 +634,19 @@
 				AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */,
 				AF0F2AB22C2F31120089A10F /* ErrorResponse.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
+				AF730F302C637B9200D19323 /* HabitViewModel.swift in Sources */,
 				AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */,
 				AF730F242C633BD200D19323 /* RefreshRequest.swift in Sources */,
 				AF23EA602C2C84FA00727F07 /* SignUpUIState.swift in Sources */,
 				AF730F192C61081A00D19323 /* SignUpInteractor.swift in Sources */,
 				AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */,
+				AF730F282C637B0800D19323 /* HomeViewRouter.swift in Sources */,
 				AF3FB3022C2DA80D00A3C77A /* EditTextView.swift in Sources */,
 				AF0F2AAE2C2F24680089A10F /* SignUpRequest.swift in Sources */,
 				AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */,
 				AF0F2AB62C2F38B10089A10F /* SignInResponse.swift in Sources */,
 				AFEE19B62C29EF3B00C524BB /* SignInUIState.swift in Sources */,
+				AF730F2E2C637B5700D19323 /* HabitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
