@@ -52,7 +52,7 @@ class SignInViewModel: ObservableObject {
                 let userAuth = UserAuth(idToken: success.accessToken,
                                         refreshToken: success.refreshToken,
                                         expires: Date().timeIntervalSince1970 + Double(success.expires),
-                                        tokeyType: success.tokenType)
+                                        tokenType: success.tokenType)
                 self.interactor.insertAuth(userAuth: userAuth)
                 self.uiState = .goToHomeScreen
             }

@@ -37,6 +37,8 @@
 		AF730F1D2C6287A600D19323 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1C2C6287A600D19323 /* UserAuth.swift */; };
 		AF730F1F2C6288BA00D19323 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */; };
 		AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F212C629D4900D19323 /* SplashInteractor.swift */; };
+		AF730F242C633BD200D19323 /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F232C633BD200D19323 /* RefreshRequest.swift */; };
+		AF730F262C633DEB00D19323 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -100,6 +102,8 @@
 		AF730F1C2C6287A600D19323 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		AF730F1E2C6288BA00D19323 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		AF730F212C629D4900D19323 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		AF730F232C633BD200D19323 /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
+		AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				AF730F212C629D4900D19323 /* SplashInteractor.swift */,
+				AF730F252C633DEB00D19323 /* SplashRemoteDataSource.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				AFEE19AA2C29CFC300C524BB /* SplashUIState.swift */,
+				AF730F232C633BD200D19323 /* RefreshRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				AF0F2AB02C2F2EA30089A10F /* SignUpResponse.swift in Sources */,
 				AFEE19BA2C29F04600C524BB /* SplashViewRouter.swift in Sources */,
 				AF730F162C61018D00D19323 /* AppError.swift in Sources */,
+				AF730F262C633DEB00D19323 /* SplashRemoteDataSource.swift in Sources */,
 				AFEE19B42C29EF0700C524BB /* SignInView.swift in Sources */,
 				AF730F1B2C6108C600D19323 /* SignUpRemoteDataSource.swift in Sources */,
 				AF730F142C60FCAC00D19323 /* SignInRemoteDataSource.swift in Sources */,
@@ -583,6 +590,7 @@
 				AF0F2AB22C2F31120089A10F /* ErrorResponse.swift in Sources */,
 				AFEE19A92C29CF2300C524BB /* SplashView.swift in Sources */,
 				AF23EA4C2C2C75BB00727F07 /* SignInViewRouter.swift in Sources */,
+				AF730F242C633BD200D19323 /* RefreshRequest.swift in Sources */,
 				AF23EA602C2C84FA00727F07 /* SignUpUIState.swift in Sources */,
 				AF730F192C61081A00D19323 /* SignUpInteractor.swift in Sources */,
 				AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */,

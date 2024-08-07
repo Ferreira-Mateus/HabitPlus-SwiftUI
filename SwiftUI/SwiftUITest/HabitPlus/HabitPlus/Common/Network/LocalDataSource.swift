@@ -24,7 +24,7 @@ class LocalDataSource {
         return userAuth ?? UserAuth(idToken: "",
                                     refreshToken: "",
                                     expires: 0,
-                                    tokeyType: "")
+                                    tokenType: "")
     }
 }
 

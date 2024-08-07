@@ -1,43 +1,73 @@
-import Foundation
 import SwiftUI
 import Combine
 
 class SplashViewModel: ObservableObject {
-    
-    @Published var uiState: SplashUIState = .loading
-    
-    private var cancellable: AnyCancellable?
-    
-    private let interactor: SplashInteractor
-        
-    init(interactor: SplashInteractor) {
-        self.interactor = interactor
-    }
-    
-    deinit {
-        cancellable?.cancel()
-    }
-    
-    func onAppear() {
-        // Se userAuth == null -> tela de login
-        // userAuth != null && expirou -> Refresh
-        // senão -> tela de home
-        cancellable = interactor.fetchAuth()
+  
+  @Published var uiState: SplashUIState = .loading
+  
+  private var cancellableAuth: AnyCancellable?
+  private var cancellableRefresh: AnyCancellable?
+  
+  private let interactor: SplashInteractor
+  
+  init(interactor: SplashInteractor) {
+    self.interactor = interactor
+  }
+  
+  deinit {
+    cancellableAuth?.cancel()
+    cancellableRefresh?.cancel()
+  }
+  
+  func onAppear() {
+    cancellableAuth = interactor.fetchAuth()
+      .delay(for: .seconds(2), scheduler: RunLoop.main)
+      .receive(on: DispatchQueue.main)
+      .sink { userAuth in
+        // se userAuth == nulo -> Login
+        if userAuth == nil {
+          self.uiState = .goToSignInScreen
+        }
+        // senao se userAuth != null && expirou
+        else if (Date().timeIntervalSince1970 > Double(userAuth!.expires)) {
+          // chamar o refresh token na API
+          print("token expirou")
+          let reqeuest = RefreshRequest(token: userAuth!.refreshToken)
+          self.cancellableRefresh = self.interactor.refreshToken(refreshRequest: reqeuest)
             .receive(on: DispatchQueue.main)
-            .sink { userAuth in
-                if userAuth == nil {
-                    self.uiState = .goToSignInScreen
-                } else if Date().timeIntervalSince1970 > Double(userAuth!.expires) {
-                    
-                } else {
-                    self.uiState = .goToHomeScreen
-                }
-            }
-    }
+            .sink(receiveCompletion: { completion in
+              switch(completion) {
+                case .failure(_):
+                  self.uiState = .goToSignInScreen
+                  break
+                default:
+                  break
+              }
+            }, receiveValue: { success in
+              
+              let auth = UserAuth(idToken: success.accessToken,
+                                  refreshToken: success.refreshToken,
+                                  expires: Date().timeIntervalSince1970 + Double(success.expires),
+                                  tokenType: success.tokenType)
+              
+              self.interactor.insertAuth(userAuth: auth)
+              
+              self.uiState = .goToHomeScreen
+              
+            })
+        }
+        // senao -> Tela princial
+        else {
+          self.uiState = .goToHomeScreen
+        }
+      }
+  }
+  
 }
 
 extension SplashViewModel {
-    func signInView() -> some View {
-        return SplashViewRouter.makeSignInView()
-    }
+  func signInView() -> some View {
+    return SplashViewRouter.makeSignInView()
+  }
 }
+
