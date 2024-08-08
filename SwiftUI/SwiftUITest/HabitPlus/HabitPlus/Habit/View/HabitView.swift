@@ -37,8 +37,18 @@ struct HabitView: View {
                                 }
                                 .padding(.horizontal, 14)
                                 
-                            } else if case HabitUIState.error(_) = viewModel.uiState {
-                             
+                            } else if case HabitUIState.error(let msg) = viewModel.uiState {
+                                Text("")
+                                    .alert(isPresented: .constant(true)) {
+                                        Alert(
+                                            title: Text("Ops \(msg)"),
+                                            message: Text("Tentar novamente?"),
+                                            primaryButton: .default(Text("Sim")) {
+                                                viewModel.onAppear()
+                                            },
+                                            secondaryButton: .cancel()
+                                        )
+                                    }
                                 
                             }
                         }

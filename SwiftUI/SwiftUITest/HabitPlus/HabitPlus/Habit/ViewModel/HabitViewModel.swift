@@ -31,7 +31,7 @@ class HabitViewModel: ObservableObject {
                                            value: "2",
                                            state: .green))
             
-            self.uiState = .fullList(rows)
+            self.uiState = .error("errinho")
         }
     }
 }
