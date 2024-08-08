@@ -30,8 +30,12 @@ struct HabitView: View {
                                     Text("Nenhum hábito encontrato")
                                 }
                                 
-                            } else if case HabitUIState.fullList = viewModel.uiState {
-                                
+                            } else if case HabitUIState.fullList(let rows) = viewModel.uiState {
+                                // Multiplos valores de lista, elementos de views, não usar o list pois ja estamos numa scroll, então usaremos LazyVStack
+                                LazyVStack {
+                                    ForEach(rows, content: HabitCardView.init(viewModel: ))
+                                }
+                                .padding(.horizontal, 14)
                                 
                             } else if case HabitUIState.error(_) = viewModel.uiState {
                              
@@ -41,6 +45,9 @@ struct HabitView: View {
                     }
                 }.navigationTitle("Meus hábitos")
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
     }
 }
