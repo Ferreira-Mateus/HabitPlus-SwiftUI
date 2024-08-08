@@ -44,6 +44,8 @@
 		AF730F302C637B9200D19323 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F2F2C637B9200D19323 /* HabitViewModel.swift */; };
 		AF730F322C637CB600D19323 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F312C637CB600D19323 /* HabitUIState.swift */; };
 		AF730F352C63E16F00D19323 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F342C63E16F00D19323 /* ButtonStyle.swift */; };
+		AF730F372C64E3E000D19323 /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F362C64E3E000D19323 /* HabitCardViewModel.swift */; };
+		AF730F392C64E50000D19323 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF730F382C64E50000D19323 /* HabitCardView.swift */; };
 		AFA5DD572C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */; };
 		AFA5DD5A2C2DB2A500CBEB1F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */; };
 		AFA5DD5C2C2DB49000CBEB1F /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */; };
@@ -114,6 +116,8 @@
 		AF730F2F2C637B9200D19323 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		AF730F312C637CB600D19323 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		AF730F342C63E16F00D19323 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		AF730F362C64E3E000D19323 /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
+		AF730F382C64E50000D19323 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 		AFA5DD562C2DAEBE00CBEB1F /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		AFA5DD592C2DB2A500CBEB1F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		AFA5DD5B2C2DB49000CBEB1F /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				AF730F2F2C637B9200D19323 /* HabitViewModel.swift */,
+				AF730F362C64E3E000D19323 /* HabitCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				AF730F2D2C637B5700D19323 /* HabitView.swift */,
+				AF730F382C64E50000D19323 /* HabitCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				AF0F2AAC2C2F087B0089A10F /* WebService.swift in Sources */,
 				AF23EA622C2C853B00727F07 /* SignUpViewModel.swift in Sources */,
 				AF1530A42C29C395009041A8 /* HabitPlusApp.swift in Sources */,
+				AF730F392C64E50000D19323 /* HabitCardView.swift in Sources */,
 				AF23EA642C2C85B000727F07 /* SignUpViewRouter.swift in Sources */,
 				AF730F222C629D4900D19323 /* SplashInteractor.swift in Sources */,
 				AF23EA5E2C2C7A0F00727F07 /* Gender.swift in Sources */,
@@ -655,6 +662,7 @@
 				AF730F282C637B0800D19323 /* HomeViewRouter.swift in Sources */,
 				AF3FB3022C2DA80D00A3C77A /* EditTextView.swift in Sources */,
 				AF0F2AAE2C2F24680089A10F /* SignUpRequest.swift in Sources */,
+				AF730F372C64E3E000D19323 /* HabitCardViewModel.swift in Sources */,
 				AFEE19AE2C29DA9900C524BB /* SplashViewModel.swift in Sources */,
 				AF0F2AB62C2F38B10089A10F /* SignInResponse.swift in Sources */,
 				AFEE19B62C29EF3B00C524BB /* SignInUIState.swift in Sources */,
