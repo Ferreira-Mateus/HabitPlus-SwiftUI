@@ -47,15 +47,15 @@ class HabitViewModel: ObservableObject {
               
               let lastDate = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss",
                                                  destPattern: "dd/MM/yyyy HH:mm") ?? ""
-                let lastCompare = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss",
-                                                      destPattern: "yyyy-MM-dd HH:mm") ?? ""
               
               var state = Color.green
               self.title = "Muito bom!"
               self.headline = "Seus hábitos estão em dia"
               self.desc = ""
               
-              if lastCompare < Date().toString(destPattern: "dd/MM/yyyy") {
+              let lastCompare = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss") ?? Date()
+                
+              if lastCompare < Date() {
                 state = .red
                 self.title = "Atenção"
                 self.headline = "Fique ligado!"

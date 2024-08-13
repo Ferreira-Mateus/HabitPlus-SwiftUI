@@ -112,5 +112,5 @@ extension HabitView {
 }
 
 #Preview {
-    HomeViewRouter.makeHabitView()
+    HomeViewRouter.makeHabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
 }
